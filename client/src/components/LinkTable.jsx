@@ -3,6 +3,8 @@ import { useState } from 'react';
 import CopyButton from './CopyButton.jsx';
 import { api } from '../api/api.js';
 
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000';
+
 export default function LinkTable({ links, onLinkDeleted }) {
   const [deleting, setDeleting] = useState(new Set());
 
@@ -49,7 +51,7 @@ export default function LinkTable({ links, onLinkDeleted }) {
             <tr key={link.id}>
               <td>
                 <code style={styles.code}>{link.code}</code>
-                <CopyButton text={`${window.location.origin}/${link.code}`} label="URL" />
+                <CopyButton text={`${API_BASE}/${link.code}`} label="URL" />
               </td>
               <td>
                 <a
