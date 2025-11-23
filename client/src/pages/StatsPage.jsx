@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 // import Header from '../components/Header.jsx';
 import { api } from '../api/api.js';
-import Header from '../components/header.jsx';
+import Header from '../components/Header.jsx';
 
 export default function StatsPage() {
   const { code } = useParams();

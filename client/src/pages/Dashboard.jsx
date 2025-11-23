@@ -1,10 +1,10 @@
 // src/pages/Dashboard.jsx
 import { useState, useEffect } from 'react';
-// import Header from '../components/Header.jsx';
+import Header from '../components/Header.jsx';
 import LinkForm from '../components/LinkForm.jsx';
 import LinkTable from '../components/LinkTable.jsx';
 import { api } from '../api/api.js';
-import Header from '../components/header.jsx';
+// import Header from '../components/header.jsx';
 
 export default function Dashboard() {
   const [links, setLinks] = useState([]);
