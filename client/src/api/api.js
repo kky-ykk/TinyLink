@@ -1,6 +1,6 @@
 // src/api/api.js
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000';
-console.log("url::",API_BASE);
+
 export const api = {
   // GET /api/links
   async getLinks() {

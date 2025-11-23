@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { api } from '../api/api.js';
 
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000';
+
 export default function LinkForm({ onLinkCreated }) {
   const [url, setUrl] = useState('');
   const [code, setCode] = useState('');
@@ -19,7 +21,7 @@ export default function LinkForm({ onLinkCreated }) {
 
     try {
       const link = await api.createLink({ url, code: code.trim() || undefined });
-      setSuccess(`Link created! ${window.location.origin}/${link.code}`);
+      setSuccess(`Link created! ${API_BASE}/${link.code}`);
       onLinkCreated(link);
       setUrl('');
       setCode('');
